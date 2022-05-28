@@ -1,0 +1,34 @@
+body {
+  font-family: Georgia;
+}
+figure {
+  background-color: rgb(197, 85, 160);
+  text-align: center;
+  width: 50%;
+  height: 180px;
+}
+header {
+  background-color: rgb(246, 226, 222);
+  text-align: center;
+  height: 100px;
+  padding: 10px;
+}
+
+footer {
+  background-color: rgb(246, 226, 222);
+  text-align: center;
+  height: 100px;
+  padding: 10px;
+}
+main {
+  background-color: rgb(197, 85, 160);
+  color: white;
+  width: 50%;
+  height: 400px;
+}
+aside {
+  background-color: rgb(197, 85, 160);
+  color: white;
+  width: 50%;
+  height: 400px;
+}
