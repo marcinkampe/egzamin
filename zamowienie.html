@@ -4,21 +4,23 @@
     <meta charset="UTF-8" />
     <title>Fabryka żelków</title>
     <link rel="stylesheet" href="styl9.css" />
-    <figure>
+  </head>
+  <body>
+    <section class="gorny_lewy">
       <a href="index.html"><img src="cukierki2.png" alt="logo fabryki" /></a>
-    </figure>
-    <figure>
-      <a href="zamowienie.html">Zamówienie</a
-      ><img src="cukierki1.png" alt="cukierki" />
-    </figure>
+    </section>
 
-    <header><h2>Zamów nasz produkt</h2></header>
+    <section class="gorny_prawy">
+      <a class="zamowienie" href="zamowienie.html">Zamówienie</a>
+    </section>
 
-    <aside>
+    <header class="baner"><h2>Zamów nasz produkt</h2></header>
+
+    <section class="glowny_lewy">
       <h1>Oferta</h1>
       <table>
         <tr>
-          <th>Kryształy</th>
+          <th>Kształty</th>
           <th>Kolory</th>
         </tr>
         <tr>
@@ -39,27 +41,64 @@
           </th>
         </tr>
       </table>
-    </aside>
+    </section>
 
-    <main>
-      <p>Podaj numer kształtu:</p>
+    <section class="glowny_prawy">
+      <div class="fix">
+        <p>Podaj numer kształtu:</p>
 
-      <input type="number" name="" id="" />
-      <p>Skomponuj swój kolor, podaj RGB:</p>
+        <input type="number" name="ksztalt" id="ksztalt" />
+        <p>Skomponuj swój kolor, podaj RGB:</p>
 
-      <p>R</p>
-      <input type="number" name="" id="" />
-      <p>G</p>
-      <input type="number" name="" id="" />
-      <p>B</p>
-      <input type="number" name="" id="" />
+        <div class="rgb">
+          <p>R:</p>
+          <input type="number" name="R" id="R" />
+          <p>G:</p>
+          <input type="number" name="G" id="G" />
+          <p>B:</p>
+          <input type="number" name="B" id="B" />
+        </div>
+      </div>
 
-      <button type="submit">Zamów</button>
-      <p>Wybrany kształt</p>
-      <button>Wybrany kolor</button>
-    </main>
+      <button type="submit" onclick="jaki_ksztalt()">Zamów</button>
+      <p id="pole">Wybrany kształt</p>
+      <button id="kolor">Wybrany kolor</button>
+    </section>
 
     <footer><i>Autor strony Marcin Kampe 3B</i></footer>
-  </head>
-  <body></body>
+
+    <script>
+      function jaki_ksztalt() {
+        switch (document.getElementById("ksztalt").value) {
+          case "1":
+            document.getElementById("pole").innerHTML = "wybrałeś kształt: miś";
+            break;
+
+          case "2":
+            document.getElementById("pole").innerHTML =
+              "wybrałeś kształt: żabka";
+            break;
+
+          case "3":
+            document.getElementById("pole").innerHTML =
+              "wybrałeś kształt: serce";
+            break;
+
+          default:
+            document.getElementById("pole").innerHTML =
+              "wybrałeś kształt: inny";
+            break;
+        }
+
+        document.getElementById("kolor").style.backgroundColor =
+          "rgb(" +
+          document.getElementById("R").value +
+          "," +
+          document.getElementById("G").value +
+          "," +
+          document.getElementById("B").value +
+          ")";
+      }
+    </script>
+  </body>
 </html>
